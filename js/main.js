@@ -1,66 +1,95 @@
 //Simulador de compras de prendas
 //En este proyecto me avocaré a una tienda online de ropa 
+let cards = document.querySelector('#cards')
+let carrito = {}
+let tbody = document.querySelector('tbody')
+let tfoot = document.querySelector('tfoot')
 
-function agregarProducto(idProducto, cantidad, porcentajeDescuento) {
-    //Calculo los descuentos
-    let productoAgregar = productos.find(producto => producto.Id === idProducto)  
-    console.log(productoAgregar)  
-    let descuento = (productoAgregar.Precio * porcentajeDescuento) / 100;
-    //Se lo aplico al precio
-    let precioConDescuento = productoAgregar.Precio - descuento;
-    const productoCarrito = {
-        Id: carrito.length +1,
-        Nombre: productoAgregar.Nombre,
-        Precio: precioConDescuento,
-        Cantidad: cantidad
-    };
-    carrito.push(productoCarrito)
-}
 
 const productos = [
     {
         "Id": 1,
         "Nombre": "Remera",
         "Precio": 1150,
+        "Imagen": "../img/1dd750725d05aec97548e50bceb9eb8e.jpg"
     },
     {
         "Id": 2,
         "Nombre": "Pantalon",
         "Precio": 2000,
+        "Imagen": "../img/1dd750725d05aec97548e50bceb9eb8e.jpg"
     },
     {
         "Id": 3,
         "Nombre": "Campera",
         "Precio": 5000,
+        "Imagen": "../img/1dd750725d05aec97548e50bceb9eb8e.jpg"
     }
 ]
-
-let carrito = []
-
-const envio = 800; //Valor estimativo de envío
-
-//El usuario pondrá el precio de la prenda elegida +  la cantidad que desee comprar
-let idProducto = prompt("Ingrese el numero producto que desea comprar:" + "\n" + productos.map((producto) => ` \n ${producto.Id} - ${producto.Nombre}`) + "\n" + "o salir para finalizar")
-
-while (idProducto !== "salir") {
-    let cantidad = parseInt(prompt("Ingrese la cantidad de unidades que desea comprar de esta prenda:"));
-    let porcentajeDescuento = parseInt(prompt("Posee cupón de descuento? Ingrese el porcentaje de descuento, caso contrario ingrese No:"))
-    switch (idProducto) {
-        case "1":
-            agregarProducto(1, cantidad, porcentajeDescuento)            
-            break
-        case "2":
-            agregarProducto(2, cantidad, porcentajeDescuento)
-            break
-        case "3":
-            agregarProducto(3, cantidad, porcentajeDescuento)
-            break
-    }
-    idProducto = prompt("Ingrese el numero producto que desea comprar:" + "\n" + productos.map((producto) => ` \n ${producto.Id} - ${producto.Nombre} \n o salir para finalizar`))
-    if (idProducto === "salir") {
-        let precioFinal = carrito.reduce((acc, { Precio }) => acc + Precio, 0);
-        alert("El precio total de tu compra es $" + precioFinal);
-        alert("¡Que lo disfrutes!");
-        break
+productos.forEach(producto => {
+    //console.log(producto.Nombre);
+    const container = document.createElement('div')
+    container.className = "card"
+    container.style = "width: 18rem;"
+    container.innerHTML = `
+        <img key="${producto.Id}" src="${producto.Imagen}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">${producto.Nombre}</h5>
+            <p class="card-text">${producto.Precio}</p>
+            <a href="#" class="btn btn-primary" id=${producto.Id}>Go somewhere</a>
+        </div>`
+        cards.appendChild(container);
+        document.getElementById(`${producto.Id}`).addEventListener('click', () =>{
+            agregarCarrito(container) 
+        })
+})  
+function agregarCarrito(container, e) {
+    if (container) {
+        setCarrito(container)
     }
 }
+function setCarrito(container) {
+    const product = {
+        "nombre": container.querySelector('h5').textContent, //textcontent obtengo el valor de la etiqueta
+        "precio": container.querySelector('p').textContent,
+        "id": container.querySelector('a').id, //palabra clave id
+        "cantidad": 1
+    } 
+    if (carrito.hasOwnProperty(product.id)) { //pregunta si product.id existe 
+        product.cantidad = carrito[product.id].cantidad + 1 
+       // console.log(product);
+    }
+    carrito[product.id] = {...product} //pinta todos los productos
+    pintarCarrito ()
+}
+
+function pintarCarrito(){
+    //console.log(carrito);
+    tbody.innerHTML = ``
+    Object.values(carrito).forEach(producto => { //object.values: transforma en un array
+        const tr = document.createElement('tr')
+        tr.innerHTML = `<td>${producto.nombre}</td>
+            <td>${producto.cantidad}</td>
+            <td>${producto.precio * producto.cantidad}</td>`
+        tbody.appendChild(tr)
+    })
+    total() 
+}
+function total(){
+    tfoot.innerHTML = ''
+    const tr = document.createElement('tr')
+    const precioTotal = Object.values(carrito).reduce((acumulador, {cantidad, precio}) =>
+        acumulador + precio * cantidad, 0 
+    )
+    const cantidadTotal = Object.values(carrito).reduce((acumulador, {cantidad}) => 
+        acumulador + cantidad, 0
+    )
+    console.log(cantidadTotal)
+    tr.innerHTML = `<th> </th>
+        <th>${cantidadTotal}</th>
+        <th>${precioTotal}</th>`
+    tfoot.appendChild(tr)
+}
+
+
+
