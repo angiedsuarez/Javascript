@@ -32,4 +32,8 @@ body main .descripcion-p {
   color: white;
   font-size: 0.9rem;
   text-align: center;
+}
+body main #cards {
+  display: flex;
+  padding: 0 15px;
 }/*# sourceMappingURL=main.css.map */
