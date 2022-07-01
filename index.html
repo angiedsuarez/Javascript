@@ -5,29 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="./sass/main.css"">
     <title>Aphrodite Clothing</title>
 </head>
 <body>
 
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="nosotros.html">Sobre nosotros</a></li>
-                <li><a href="catalogo.html">Catálogo</a></li>
-            </ul>
-        </nav>
+        <div>
+            <h1 class="nav-logo">Aphrodite Clothing</h1>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./secciones/catalogo.html">Catálogos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./secciones/contacto.html">Contacto</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./secciones/nosotros.html">Nosotros</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div class="banner-logo">
+            
+          </div>
     </header>
     <main>
         <div>
-            <h1>Aphrodite Clothing</h1>
-            <h3>Tienda de ropa unisex</h3>
-        </div>
-        <div>
-            <h4>Sobre nosotros</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur quas, non minus quis cupiditate illum, recusandae nam quos earum amet veniam sint et facilis eveniet laudantium nisi quibusdam doloremque.
+            <h4 class="descripcion-titulo">Sobre nosotros</h4>
+            <p class="descripcion-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur quas, non minus quis cupiditate illum, recusandae nam quos earum amet veniam sint et facilis eveniet laudantium nisi quibusdam doloremque. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque autem nihil expedita hic consectetur voluptas nulla optio suscipit nisi recusandae, quos nam enim dolorem placeat ipsum doloribus alias reiciendis voluptatum!
             </p>
         </div>
 
@@ -49,6 +67,44 @@
 
             </tfoot>
           </table>
+
+          <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="botonModal">
+  Confirmar
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Pedido en proceso</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modalInfo">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Producto</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Precio</th>
+            </tr>
+          </thead>
+          <tbody id="modalBody">
+            
+          </tbody>
+          <tfoot id="modalFoot">
+
+          </tfoot>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" id="btnConfirmar" data-bs-dismiss="modal">Confirmar pedido</button>
+      </div>
+    </div>
+  </div>
+</div>
 
         <div>
             <div>

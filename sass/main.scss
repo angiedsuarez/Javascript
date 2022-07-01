@@ -1,0 +1,46 @@
+@import "variables";
+
+ul {
+    list-style: none;
+}
+
+body {
+    width: 100%;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, black, white);
+    header{
+        .nav-logo{
+            font-family: 'Grenze Gotisch';
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }   
+        .navbar-collapse{
+            display: flex;
+            justify-content: center;
+            .navbar-nav{
+                .nav-item{
+                    .nav-link{
+                        padding: 5px 15px;
+                    }
+                }
+                
+            }
+        }
+    }
+    main{
+        .descripcion-titulo{
+            font-family: 'Grenze Gotisch';  
+            text-align: center; 
+            padding: 25px 0;  
+            font-size: 2.5rem;
+            color: white;
+        }
+        .descripcion-p{
+            color: white;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+    }
+}

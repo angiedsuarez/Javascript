@@ -1,0 +1,35 @@
+ul {
+  list-style: none;
+}
+
+body {
+  width: 100%;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom, black, white);
+}
+body header .nav-logo {
+  font-family: "Grenze Gotisch";
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+body header .navbar-collapse {
+  display: flex;
+  justify-content: center;
+}
+body header .navbar-collapse .navbar-nav .nav-item .nav-link {
+  padding: 5px 15px;
+}
+body main .descripcion-titulo {
+  font-family: "Grenze Gotisch";
+  text-align: center;
+  padding: 25px 0;
+  font-size: 2.5rem;
+  color: white;
+}
+body main .descripcion-p {
+  color: white;
+  font-size: 0.9rem;
+  text-align: center;
+}/*# sourceMappingURL=main.css.map */
