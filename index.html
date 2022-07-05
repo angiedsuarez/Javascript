@@ -8,125 +8,104 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="./sass/main.css"">
+    <link rel="stylesheet" href="./sass/main.css">
     <title>Aphrodite Clothing</title>
 </head>
-<body>
-
+  <body>
     <header>
-        <div>
-            <h1 class="nav-logo">Aphrodite Clothing</h1>
+      <div>
+        <h1 class="nav-logo">Aphrodite Clothing</h1>
+      </div>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./secciones/catalogo.html">Catálogos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./secciones/contacto.html">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./secciones/nosotros.html">Nosotros</a>
+            </li>
+          </ul>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="botonModal">
+            Ver carrito
+          </button>
+          <div id="contador-productos" class="text-white"></div>
         </div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./secciones/catalogo.html">Catálogos</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./secciones/contacto.html">Contacto</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./secciones/nosotros.html">Nosotros</a>
-                </li>
-              </ul>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="botonModal">
-                Ver carrito
-              </button>
-              <div id="contador-productos" class="text-white">
-              </div>
-            </div>
-          </nav>
-          <div class="banner-logo">
-            
-          </div>
+      </nav>
+      <div class="banner-logo"></div>
     </header>
     <main>
+      <div>
+        <h4 class="descripcion-titulo">Sobre nosotros</h4>
+        <p class="descripcion-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur quas, non minus quis cupiditate illum, recusandae nam quos earum amet veniam sint et facilis eveniet laudantium nisi quibusdam doloremque. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque autem nihil expedita hic consectetur voluptas nulla optio suscipit nisi recusandae, quos nam enim dolorem placeat ipsum doloribus alias reiciendis voluptatum.</p>
+      </div>
+      <div id="cards"></div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Producto</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Precio</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot></tfoot>
+      </table>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Pedido en proceso</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modalInfo">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Cantidad</th>
+                  <th scope="col">Precio</th>
+                  </tr>
+                </thead>
+                <tbody id="modalBody"></tbody>
+              <tfoot id="modalFoot"></tfoot>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary" id="btnConfirmar" data-bs-dismiss="modal">Confirmar pedido</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
         <div>
-            <h4 class="descripcion-titulo">Sobre nosotros</h4>
-            <p class="descripcion-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur quas, non minus quis cupiditate illum, recusandae nam quos earum amet veniam sint et facilis eveniet laudantium nisi quibusdam doloremque. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque autem nihil expedita hic consectetur voluptas nulla optio suscipit nisi recusandae, quos nam enim dolorem placeat ipsum doloribus alias reiciendis voluptatum!
-            </p>
+          <h3>Nuestros métodos de pagos</h3>
+          <p><img src="#" alt="mercadopago">mercadopago</p>
+          <p><img src="#" alt="tarjeta-debito">Con tus tarjetas de débito Visa y Mastercard</p>
+          <p><img src="#" alt="tarjeta-crédito">Con tus tarjetas de crédito Visa y Mastercard</p>
+          <p><img src="#" alt="efectivo">Desde cualquier punto de pago: Pago fácil y Rapipago</p>
+          <p><img src="#" alt="transferencia-bancaria">Desde transferencias bancarias</p>
         </div>
-
-        <div id="cards">    
-        </div>
-
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Producto</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col">Precio</th>
-              </tr>
-            </thead>
-            <tbody>
-              
-            </tbody>
-            <tfoot>
-
-            </tfoot>
-          </table>
-
-          <!-- Button trigger modal -->
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Pedido en proceso</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div>
+        <h5>Envíos a todos el pais</h5>
+        <p>Envios gratis con una compra mínima de $5000</p>
       </div>
-      <div class="modal-body" id="modalInfo">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Producto</th>
-              <th scope="col">Cantidad</th>
-              <th scope="col">Precio</th>
-            </tr>
-          </thead>
-          <tbody id="modalBody">
-            
-          </tbody>
-          <tfoot id="modalFoot">
-
-          </tfoot>
-        </table>
+      <div>
+        <h5>Con tu banco podés hacer en 3, 6 y 9 cuotas sin interés</h5>
+        <p>Podés consultar que promociones tenemos para vos con tu banco emisor</p>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary" id="btnConfirmar" data-bs-dismiss="modal">Confirmar pedido</button>
       </div>
-    </div>
-  </div>
-</div>
-
-        <div>
-            <div>
-                <h3>Nuestros métodos de pagos</h3>
-                <p><img src="#" alt="mercadopago">mercadopago</p>
-                <p><img src="#" alt="tarjeta-debito">Con tus tarjetas de débito Visa y Mastercard</p>
-                <p><img src="#" alt="tarjeta-crédito">Con tus tarjetas de crédito Visa y Mastercard</p>
-                <p><img src="#" alt="efectivo">Desde cualquier punto de pago: Pago fácil y Rapipago</p>
-                <p><img src="#" alt="transferencia-bancaria">Desde transferencias bancarias</p>
-            </div>
-            <div>
-                <h5>Envíos a todos el pais</h5>
-                <p>Envios gratis con una compra mínima de $5000</p>
-            </div>
-            <div>
-                <h5>Con tu banco podés hacer en 3, 6 y 9 cuotas sin interés</h5>
-                <p>Podés consultar que promociones tenemos para vos con tu banco emisor</p>
-            </div>
-        </div>
     </main>
     <footer>
         Todos los derechos reservados © Aphrodite Clothing 2022.
@@ -137,6 +116,6 @@
     <script src="./js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
-
-</body>
+    
+  </body>
 </html>
