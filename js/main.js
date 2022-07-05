@@ -19,21 +19,63 @@ botonModal.style.visibility = "hidden"
 const productos = [
     {
         "Id": 1,
-        "Nombre": "Remera",
+        "Nombre": "Conjunto top y pantalón negro",
         "Precio": 1150,
-        "Imagen": "../img/1dd750725d05aec97548e50bceb9eb8e.jpg"
+        "Imagen": "../img/conjunto-nike.jpg"
     },
     {
         "Id": 2,
-        "Nombre": "Pantalon",
+        "Nombre": "Pantalon negro/rosa",
         "Precio": 2000,
-        "Imagen": "../img/1dd750725d05aec97548e50bceb9eb8e.jpg"
+        "Imagen": "../img/pantalon-negro-rosa.jpg"
     },
     {
         "Id": 3,
-        "Nombre": "Campera",
+        "Nombre": "Collar esposas dobles",
+        "Precio": 1000,
+        "Imagen": "../img/collar-esposas-dobles.jpg"
+    },
+    {
+        "Id": 4,
+        "Nombre": "Piluso negro fuego",
+        "Precio": 800,
+        "Imagen": "../img/piluso-fuego.jpg"
+    },
+    {
+        "Id": 5,
+        "Nombre": "Remera manga corta",
+        "Precio": 2000,
+        "Imagen": "../img/remera-corta.jpg"
+    },
+    {
+        "Id": 6,
+        "Nombre": "Top corset",
+        "Precio": 1500,
+        "Imagen": "../img/top-corset.jpg"
+    },
+    {
+        "Id": 7,
+        "Nombre": "Vestido negro/blanco",
         "Precio": 5000,
-        "Imagen": "../img/1dd750725d05aec97548e50bceb9eb8e.jpg"
+        "Imagen": "../img/vestido-negro-blanco.jpg"
+    },
+    {
+        "Id": 8,
+        "Nombre": "Top crop Nike",
+        "Precio": 1500,
+        "Imagen": "../img/top-crop-nike.jpg"
+    },
+    {
+        "Id": 9,
+        "Nombre": "Collares diferentes",
+        "Precio": 1000,
+        "Imagen": "../img/collares.jpg"
+    },
+    {
+        "Id": 10,
+        "Nombre": "Collar dorado BabyGirl",
+        "Precio": 1500,
+        "Imagen": "../img/collar-babygirl.jpg"
     }
 ]
 //Iteramos productos y los mostramos en el DOM
