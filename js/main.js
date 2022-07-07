@@ -19,63 +19,63 @@ botonModal.style.visibility = "hidden"
 const productos = [
     {
         "Id": 1,
-        "Nombre": "Conjunto top y pantalón negro",
+        "Nombre": "Conjunto top y pantalón",
         "Precio": 1150,
-        "Imagen": "../img/conjunto-nike.jpg"
+        "Imagen": "../img/conjunto-nike1.png"
     },
     {
         "Id": 2,
         "Nombre": "Pantalon negro/rosa",
         "Precio": 2000,
-        "Imagen": "../img/pantalon-negro-rosa.jpg"
+        "Imagen": "../img/pantalon-negro-rosa1.png"
     },
     {
         "Id": 3,
         "Nombre": "Collar esposas dobles",
         "Precio": 1000,
-        "Imagen": "../img/collar-esposas-dobles.jpg"
+        "Imagen": "../img/collar-esposas-dobles1.png.png"
     },
     {
         "Id": 4,
         "Nombre": "Piluso negro fuego",
         "Precio": 800,
-        "Imagen": "../img/piluso-fuego.jpg"
+        "Imagen": "../img/piluso-fuego1.png"
     },
     {
         "Id": 5,
         "Nombre": "Remera manga corta",
         "Precio": 2000,
-        "Imagen": "../img/remera-corta.jpg"
+        "Imagen": "../img/remera-corta1.png"
     },
     {
         "Id": 6,
         "Nombre": "Top corset",
         "Precio": 1500,
-        "Imagen": "../img/top-corset.jpg"
+        "Imagen": "../img/top-corset1.png"
     },
     {
         "Id": 7,
         "Nombre": "Vestido negro/blanco",
         "Precio": 5000,
-        "Imagen": "../img/vestido-negro-blanco.jpg"
+        "Imagen": "../img/vestido-negro-blanco1.png"
     },
     {
         "Id": 8,
         "Nombre": "Top crop Nike",
         "Precio": 1500,
-        "Imagen": "../img/top-crop-nike.jpg"
+        "Imagen": "../img/top-crop-nike1.png"
     },
     {
         "Id": 9,
-        "Nombre": "Collares diferentes",
+        "Nombre": "Collar candado",
         "Precio": 1000,
-        "Imagen": "../img/collares.jpg"
+        "Imagen": "../img/colllar-candado1.png"
     },
     {
         "Id": 10,
         "Nombre": "Collar dorado BabyGirl",
         "Precio": 1500,
-        "Imagen": "../img/collar-babygirl.jpg"
+        "Imagen": "../img/collar-babygirl1.png"
     }
 ]
 //Iteramos productos y los mostramos en el DOM
@@ -89,8 +89,8 @@ productos.forEach(({Id, Nombre, Imagen, Precio}) => {
             <h5 class="card-title">${Nombre}</h5>
             <p class="card-text">${Precio}</p>
             <button name="agregar" id="${Id}"  
-            class="mx-1 shadow-sm fw-bold text-dark fs-4 rounded px-1 border-0 bg-white" 
-            type="button">agregar carrito</button>
+            class="mx-1 shadow-sm fw-bold text-white fs-4 rounded px-1 border-0 bg-black" 
+            type="button">Agregar carrito</button>
         </div>`
         cards.appendChild(container);
         document.getElementById(`${Id}`).addEventListener('click', () =>{
@@ -183,7 +183,7 @@ botonModal.addEventListener('click', () =>{
     modalFoot.appendChild(tr)
 })
 //Después de confirmar el pedido, aparecerá un alert confirmando la compra
-btnConfirmar.addEventListener('click', (e) => {
+btnConfirmar.addEventListener('click', () => {
     Swal.fire(
         'Pedido confirmado',
         '¡Gracias por comprar!',

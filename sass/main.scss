@@ -30,6 +30,7 @@ body {
         }
     }
     main{
+        margin: 50px;
         .descripcion-titulo{
             font-family: 'Grenze Gotisch';  
             text-align: center; 
@@ -42,10 +43,11 @@ body {
             font-size: 0.9rem;
             text-align: center;
         }
-        #cards{
-            display: flex;
-            padding: 0 15px;
+        .card{
+            padding: 15px;
+            margin: 15px;
         }
     } 
+
 
 }
