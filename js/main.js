@@ -182,5 +182,13 @@ botonModal.addEventListener('click', () =>{
         <th>$ ${precioTotal}</th>`
     modalFoot.appendChild(tr)
 })
+//Después de confirmar el pedido, aparecerá un alert confirmando la compra
+btnConfirmar.addEventListener('click', (e) => {
+    Swal.fire(
+        'Pedido confirmado',
+        '¡Gracias por comprar!',
+        'Confirmar'
+      )
+})
 
 
