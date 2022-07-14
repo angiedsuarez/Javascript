@@ -1,0 +1,62 @@
+[
+    {
+        "Id": 1,
+        "Nombre": "Conjunto top y pantalón",
+        "Precio": 1150,
+        "Imagen": "../img/conjunto-nike1.png"
+    },
+    {
+        "Id": 2,
+        "Nombre": "Pantalon negro/rosa",
+        "Precio": 2000,
+        "Imagen": "../img/pantalon-negro-rosa1.png"
+    },
+    {
+        "Id": 3,
+        "Nombre": "Collar esposas dobles",
+        "Precio": 1000,
+        "Imagen": "../img/collar-esposas-dobles1.png.png"
+    },
+    {
+        "Id": 4,
+        "Nombre": "Piluso negro fuego",
+        "Precio": 800,
+        "Imagen": "../img/piluso-fuego1.png"
+    },
+    {
+        "Id": 5,
+        "Nombre": "Remera manga corta",
+        "Precio": 2000,
+        "Imagen": "../img/remera-corta1.png"
+    },
+    {
+        "Id": 6,
+        "Nombre": "Top corset",
+        "Precio": 1500,
+        "Imagen": "../img/top-corset1.png"
+    },
+    {
+        "Id": 7,
+        "Nombre": "Vestido negro/blanco",
+        "Precio": 5000,
+        "Imagen": "../img/vestido-negro-blanco1.png"
+    },
+    {
+        "Id": 8,
+        "Nombre": "Top crop Nike",
+        "Precio": 1500,
+        "Imagen": "../img/top-crop-nike1.png"
+    },
+    {
+        "Id": 9,
+        "Nombre": "Collar candado",
+        "Precio": 1000,
+        "Imagen": "../img/colllar-candado1.png"
+    },
+    {
+        "Id": 10,
+        "Nombre": "Collar dorado BabyGirl",
+        "Precio": 1500,
+        "Imagen": "../img/collar-babygirl1.png"
+    }
+]

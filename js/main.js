@@ -16,87 +16,31 @@ let pedidos = []
 //Ocultamiento de botón pedido (confirmar)
 botonModal.style.visibility = "hidden"
 //Arrays de productos
-const productos = [
-    {
-        "Id": 1,
-        "Nombre": "Conjunto top y pantalón",
-        "Precio": 1150,
-        "Imagen": "../img/conjunto-nike1.png"
-    },
-    {
-        "Id": 2,
-        "Nombre": "Pantalon negro/rosa",
-        "Precio": 2000,
-        "Imagen": "../img/pantalon-negro-rosa1.png"
-    },
-    {
-        "Id": 3,
-        "Nombre": "Collar esposas dobles",
-        "Precio": 1000,
-        "Imagen": "../img/collar-esposas-dobles1.png.png"
-    },
-    {
-        "Id": 4,
-        "Nombre": "Piluso negro fuego",
-        "Precio": 800,
-        "Imagen": "../img/piluso-fuego1.png"
-    },
-    {
-        "Id": 5,
-        "Nombre": "Remera manga corta",
-        "Precio": 2000,
-        "Imagen": "../img/remera-corta1.png"
-    },
-    {
-        "Id": 6,
-        "Nombre": "Top corset",
-        "Precio": 1500,
-        "Imagen": "../img/top-corset1.png"
-    },
-    {
-        "Id": 7,
-        "Nombre": "Vestido negro/blanco",
-        "Precio": 5000,
-        "Imagen": "../img/vestido-negro-blanco1.png"
-    },
-    {
-        "Id": 8,
-        "Nombre": "Top crop Nike",
-        "Precio": 1500,
-        "Imagen": "../img/top-crop-nike1.png"
-    },
-    {
-        "Id": 9,
-        "Nombre": "Collar candado",
-        "Precio": 1000,
-        "Imagen": "../img/colllar-candado1.png"
-    },
-    {
-        "Id": 10,
-        "Nombre": "Collar dorado BabyGirl",
-        "Precio": 1500,
-        "Imagen": "../img/collar-babygirl1.png"
-    }
-]
-//Iteramos productos y los mostramos en el DOM
-productos.forEach(({Id, Nombre, Imagen, Precio}) => {
-    const container = document.createElement('div')
-    container.className = "card"
-    container.style = "width: 18rem;"
-    container.innerHTML = `
-        <img key="${Id}" src="${Imagen}" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">${Nombre}</h5>
-            <p class="card-text">${Precio}</p>
-            <button name="agregar" id="${Id}"  
-            class="mx-1 shadow-sm fw-bold text-white fs-4 rounded px-1 border-0 bg-black" 
-            type="button">Agregar carrito</button>
-        </div>`
-        cards.appendChild(container);
-        document.getElementById(`${Id}`).addEventListener('click', () =>{
-            agregarCarrito(container) 
-        })
-})  
+const peticionDeDatos = async() => {
+    await fetch('../datosapi/datos.json') 
+    .then(res => res.json())
+    //Iteramos productos y los mostramos en el DOM
+    .then(datos => datos.forEach(({Id, Nombre, Imagen, Precio}) => {
+        const container = document.createElement('div')
+        container.className = "card"
+        container.style = "width: 18rem;"
+        container.innerHTML = `
+            <img key="${Id}" src="${Imagen}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${Nombre}</h5>
+                <p class="card-text">${Precio}</p>
+                <button name="agregar" id="${Id}"  
+                class="mx-1 shadow-sm fw-bold text-white fs-4 rounded px-1 border-0 bg-black" 
+                type="button">Agregar carrito</button>
+            </div>`
+            cards.appendChild(container);
+            document.getElementById(`${Id}`).addEventListener('click', () =>{
+                agregarCarrito(container) 
+            })
+    })  )
+    
+}
+peticionDeDatos()
 //Validación de datos para agregar al carrito
 function agregarCarrito(container) {
     if (container) {
