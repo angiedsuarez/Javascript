@@ -40,3 +40,20 @@ body main .card {
   padding: 15px;
   margin: 15px;
 }
+body main .btn-agregar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 5px 15px;
+  color: black;
+  letter-spacing: 2px;
+  font-size: 12px;
+  overflow: hidden;
+  transition: 0.2s;
+}
+body main .btn-agregar:hover {
+  background: black;
+  transition-delay: 0.5s;
+  color: white;
+}

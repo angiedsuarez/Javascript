@@ -13,8 +13,10 @@ let contador = document.getElementById('contador-productos')
 //Declaración de objetos y arrays vacíos
 let carrito = {}
 let pedidos = []
+
 //Ocultamiento de botón pedido (confirmar)
 botonModal.style.visibility = "hidden"
+
 //Arrays de productos
 const peticionDeDatos = async() => {
     await fetch('../datosapi/datos.json') 
@@ -30,7 +32,7 @@ const peticionDeDatos = async() => {
                 <h5 class="card-title">${Nombre}</h5>
                 <p class="card-text">${Precio}</p>
                 <button name="agregar" id="${Id}"  
-                class="mx-1 shadow-sm fw-bold text-white fs-4 rounded px-1 border-0 bg-black" 
+                class="btn-agregar" 
                 type="button">Agregar carrito</button>
             </div>`
             cards.appendChild(container);

@@ -47,6 +47,23 @@ body {
             padding: 15px;
             margin: 15px;
         }
+        .btn-agregar{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            padding: 5px 15px;
+            color: black;
+            letter-spacing: 2px;
+            font-size: 12px;
+            overflow: hidden;
+            transition: 0.2s;
+            &:hover{
+                background: black;
+                transition-delay: 0.5s;
+                color: white;
+            }
+        }
     } 
 
 
