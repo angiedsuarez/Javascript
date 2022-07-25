@@ -40,7 +40,7 @@ body {
         }
         .descripcion-p{
             color: white;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             text-align: center;
         }
         .card{
@@ -55,7 +55,7 @@ body {
             padding: 5px 15px;
             color: black;
             letter-spacing: 2px;
-            font-size: 12px;
+            font-size: 0.9em;
             overflow: hidden;
             transition: 0.2s;
             &:hover{
@@ -64,6 +64,7 @@ body {
                 color: white;
             }
         }
+        
     } 
 
 

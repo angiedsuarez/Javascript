@@ -33,7 +33,7 @@ body main .descripcion-titulo {
 }
 body main .descripcion-p {
   color: white;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-align: center;
 }
 body main .card {
@@ -48,7 +48,7 @@ body main .btn-agregar {
   padding: 5px 15px;
   color: black;
   letter-spacing: 2px;
-  font-size: 12px;
+  font-size: 0.9em;
   overflow: hidden;
   transition: 0.2s;
 }
